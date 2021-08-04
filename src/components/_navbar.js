@@ -3,21 +3,27 @@ const nav = document.querySelector("nav");
 const arrowDown = document.querySelector(".arrow-down");
 
 const createNavbar = () => {
+  const pathName = location.pathname;
+
   nav.innerHTML = `
     <a href="index.html" class="nav__logo">
       <img src="./assets/spacex-mission-logo.png" alt="Logo" />
     </a>
     <ul class="nav__links">
-      <li class="nav__links--active nav__homeLink">
+      <li class="${
+        pathName === "/index.html" ? "nav__links--active" : ""
+      } nav__homeLink">
         <a href="./index.html">Home</a>
       </li>
-      <li>
+      <li class="${
+        pathName === "/past-launches.html" ? "nav__links--active" : ""
+      }">
         <a href="./past-launches.html">Past Launches</a>
       </li>
-      <li>
+      <li class="${pathName === "/vehicles.html" ? "nav__links--active" : ""}">
         <a href="./vehicles.html">Vehicles</a>
       </li>
-      <li>
+      <li class="${pathName === "/history.html" ? "nav__links--active" : ""}">
         <a href="./history.html">History</a>
       </li>
     </ul>
@@ -34,7 +40,7 @@ const createNavbar = () => {
 
   burger.onclick = () => {
     body.classList.toggle("body--preventScrolling");
-    arrowDown.classList.toggle("arrow-hide");
+    // arrowDown.classList.toggle("arrow-hide");
     navLinksList.classList.toggle("nav--active");
 
     navLinks.forEach((link, index) => {

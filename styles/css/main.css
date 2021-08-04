@@ -22,7 +22,7 @@ h1 {
   background-attachment: fixed !important;
 }
 
-nav {
+.nav {
   width: 100%;
   position: fixed;
   display: flex;
@@ -32,22 +32,18 @@ nav {
   top: 0;
   z-index: 9;
 }
-
 .nav__logo img {
   width: 150px;
   margin-left: 5vw;
 }
-
 .nav__links {
   display: flex;
   width: 40%;
   justify-content: space-around;
 }
-
 .nav__links li {
   list-style: none;
 }
-
 .nav__links a {
   margin: 10px 10px;
   color: #f6f6f6;
@@ -56,33 +52,25 @@ nav {
   font-weight: 200;
   font-size: 16px;
 }
-
 .nav__links a:hover {
   border-bottom: #f6f6f6 solid 2px;
   padding-bottom: 4px;
 }
-
 .nav__links--active a {
   font-weight: 500;
   border-bottom: #f6f6f6 solid 2px;
   padding-bottom: 4px;
 }
-
 .nav__burger {
   display: none;
   cursor: pointer;
 }
-
 .nav__burger div {
   width: 25px;
   height: 3px;
   background-color: #f6f6f6;
   margin: 5px;
   transition: all 0.3s ease;
-}
-
-.nav--hide {
-  display: none;
 }
 
 @media screen and (max-width: 990px) {
@@ -127,11 +115,6 @@ nav {
     transform: translateX(0%);
   }
 
-  .body--preventScrolling {
-    height: 100%;
-    overflow: hidden;
-  }
-
   @keyframes nav--linksFade {
     from {
       opacity: 0;
@@ -167,7 +150,7 @@ nav {
     width: 50%;
   }
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   nav {
     min-height: 8vh;
   }
@@ -180,6 +163,10 @@ nav {
     width: 60%;
   }
 }
+.nav--hide {
+  display: none;
+}
+
 .body--preventScrolling {
   height: 100%;
   overflow: hidden;
