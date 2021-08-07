@@ -3,4 +3,19 @@
   overflow: hidden;
 }
 
+.background-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed !important;
+}
+
+#index__video {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: -1;
+}
+
 /*# sourceMappingURL=index.css.map */

@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .nav {
   width: 100%;
   position: fixed;
@@ -25,7 +27,7 @@
 
   &__links a {
     margin: 10px 10px;
-    color: #f6f6f6;
+    color: $clr--white;
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: 200;
@@ -33,13 +35,13 @@
   }
 
   &__links a:hover {
-    border-bottom: #f6f6f6 solid 2px;
+    border-bottom: $clr--white solid 2px;
     padding-bottom: 4px;
   }
 
   &__links--active a {
     font-weight: 500;
-    border-bottom: #f6f6f6 solid 2px;
+    border-bottom: $clr--white solid 2px;
     padding-bottom: 4px;
   }
 
@@ -51,48 +53,50 @@
   &__burger div {
     width: 25px;
     height: 3px;
-    background-color: #f6f6f6;
+    background-color: $clr--white;
     margin: 5px;
     transition: all 0.3s ease;
   }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: $screen-lg) {
   body {
     overflow-x: hidden;
   }
 
-  .nav__logo {
-    width: 70%;
-  }
+  .nav {
+    &__logo {
+      width: 70%;
+    }
 
-  .nav__links {
-    width: 35%;
-    position: fixed;
-    height: 100vh;
-    right: 0;
-    top: 0;
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-  }
+    &__links {
+      width: 35%;
+      position: fixed;
+      height: 100vh;
+      right: 0;
+      top: 0;
+      background-color: $clr--dark;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+    }
 
-  .nav__links li {
-    margin-top: 8vh;
-    opacity: 0;
-  }
+    &__links li {
+      margin-top: 8vh;
+      opacity: 0;
+    }
 
-  .nav__homeLink {
-    margin-top: 12vh !important;
-  }
+    &__homeLink {
+      margin-top: 12vh !important;
+    }
 
-  .nav__burger {
-    display: block;
-    margin-right: 4vw;
+    &__burger {
+      display: block;
+      margin-right: 4vw;
+    }
   }
 
   .nav--active {
@@ -121,27 +125,31 @@
   }
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
-  nav {
+@media (min-width: $screen-s) and (max-width: $screen-md) {
+  .nav {
     min-height: 8vh;
-  }
-  .nav__logo img {
-    width: 120px;
-  }
-  .nav__links {
-    width: 50%;
+
+    &__logo img {
+      width: 120px;
+    }
+
+    &__links {
+      width: 50%;
+    }
   }
 }
 
-@media screen and (max-width: 480px) {
-  nav {
+@media screen and (max-width: $screen-s) {
+  .nav {
     min-height: 8vh;
-  }
-  .nav__logo img {
-    width: 120px;
-  }
-  .nav__links {
-    width: 60%;
+
+    &__logo img {
+      width: 120px;
+    }
+
+    &__links {
+      width: 60%;
+    }
   }
 }
 
